@@ -1,8 +1,16 @@
-# React + Vite
+# HR application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a project for studying purposes to master my React skills.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- The app displays cards with employees' information.
+- You may promote or demote an employee by clicking the button.
+
+## Usage guide
+
+Click any button and observe the card.
+
+## What I have practiced
+
+I have practiced Javascript, React, HTML/CSS, React Events and Hooks.
