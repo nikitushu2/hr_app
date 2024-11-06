@@ -17,9 +17,9 @@ function App() {
         {loggedIn ? (
           <>
           <EmployeeList />
-          <div class="logOutButton"><button id="logOut" onClick={() => setLoggedIn(false)}>Log out</button></div>
+          <div className="logOutButton"><button id="logOut" onClick={() => setLoggedIn(false)}>Log out</button></div>
           </>
-          ) : <div class="logInButton"><button id="logIn" onClick={() => setLoggedIn(true)}>Log in</button></div>}
+          ) : <div className="logInButton"><button id="logIn" onClick={() => setLoggedIn(true)}>Log in</button></div>}
       </main>
       <footer>
         <Footer />

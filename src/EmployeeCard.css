@@ -5,11 +5,52 @@
     background-color: white;
     text-align: center;
     color: #333;
-    height: 350px;
+    height: 375px;
     width: 300px;
+    position: relative;
 
 }
 
 button {
     margin: 1rem;
+}
+
+.mark {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.hide1 {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    background-color: gray;
+    padding: 5px;
+    color: white;
+}
+
+.mark:hover + .hide1 {
+    display: block;
+}
+
+.probation {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.hide2 {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    background-color: gray;
+    padding: 5px;
+    color: white;
+}
+
+.probation:hover + .hide2 {
+    display: block;
 }
