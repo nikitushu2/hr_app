@@ -14,3 +14,29 @@ body {
   justify-content: space-between;
   min-height: 100vh;
 }
+
+.logInButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logOutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logIn,
+#logOut {
+  background-color: #478749;
+}
+
+#logOut {
+  margin-inline: auto;
+}
+
+#logIn:hover,
+#logOut:hover {
+  background-color: #7cb47e;
+}

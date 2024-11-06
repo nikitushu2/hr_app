@@ -2,7 +2,7 @@ import "./EmployeeCard.css";
 import {useState} from "react";
 
 export default function EmployeeCard(props) {
-    const {name, role, salary, passion, ...rest} = props;
+    const {name, role, salary, startDate, passion, ...rest} = props;
     const [job, setJob] = useState(props.role);
     const [action, setAction] = useState("Promote");
 
@@ -21,6 +21,7 @@ export default function EmployeeCard(props) {
         <p><b>Name:</b> {name}</p>
         <p><b>Role:</b> {job}</p>
         <p><b>Salary:</b> {salary}</p>
+        <p><b>Start date:</b> {startDate}</p>
         <p><b>Passion:</b> {passion}</p>
         <button onClick={onPromote}>{action}</button>
     </div>

@@ -2,8 +2,10 @@ import './App.css'
 import EmployeeList from "./EmployeeList.jsx";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx"
+import {useState} from "react";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <>
@@ -12,7 +14,12 @@ function App() {
         <Header />
       </header>
       <main>
-        <EmployeeList />
+        {loggedIn ? (
+          <>
+          <EmployeeList />
+          <div class="logOutButton"><button id="logOut" onClick={() => setLoggedIn(false)}>Log out</button></div>
+          </>
+          ) : <div class="logInButton"><button id="logIn" onClick={() => setLoggedIn(true)}>Log in</button></div>}
       </main>
       <footer>
         <Footer />
