@@ -5,14 +5,14 @@
     background-color: white;
     text-align: center;
     color: #333;
-    height: 375px;
+    height: 350px;
     width: 300px;
     position: relative;
 
 }
 
 button {
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 .mark {
@@ -54,3 +54,33 @@ button {
 .probation:hover + .hide2 {
     display: block;
 }
+
+.job {
+    background-color: #ffc8b4;
+    display: inline;
+    padding-inline: 5px;
+    border-radius: 5px;
+}
+
+.date {
+    font-style: italic;
+}
+
+.passion {
+    text-decoration: underline;
+}
+
+.topleft {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    margin: 5px;
+    border-bottom-right-radius: 10px;
+    left: 0px;
+    top: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./data/person.webp');
+    
+  }
