@@ -1,16 +1,11 @@
-# HR application
+# HR app project
 
-This is a project for studying purposes to master my React skills.
+In this project I practise React by creating interactive cards of employees.
 
-## Features
+## Functionality
 
-- The app displays cards with employees' information.
-- You may promote or demote an employee by clicking the button.
+Each card represents information about an employee. Depending on his/her duration of work, an icon appears in the upper right corner of each card. You may promote an employee by pressing the "Promote" button. You may demote them too. Furthermore, you may change information by pressing the "Edit" button.
 
-## Usage guide
+## Tech used
 
-Click any button and observe the card.
-
-## What I have practiced
-
-I have practiced Javascript, React, HTML/CSS, React Events and Hooks.
+HTML, CSS, JavaScript, React, APIs
