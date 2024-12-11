@@ -1,6 +1,7 @@
-import "./EmployeeCard.css";
+import styles from "./EmployeeCard.module.css";
 import {useState, useEffect} from "react";
-import Button from "./Button.jsx";
+import Button from "../Button.jsx";
+import {useEmployeeStatus} from "../../hooks/useEmployeeStatus.js";
 
 export default function EmployeeCard(props) {
     const {name, role, salary, startDate, passion, index, ...rest} = props;
@@ -11,6 +12,8 @@ export default function EmployeeCard(props) {
     const [probation, setProbation] = useState("");
     const [isEditing, setIsEditing] = useState(false);
     const [color, setColor] = useState("");
+    const {years, isRecognized, isProbated} = useEmployeeStatus(startDate);
+
 
     const [info, setInfo] = useState({title: role, salary: salary, passion: passion});
 
@@ -18,12 +21,6 @@ export default function EmployeeCard(props) {
 
     const handleInfoChange = (key, value) => setInfo({...info, [key]: value})
 
-    const currDate = new Date()
-    const years = currDate.getFullYear() - new Date(startDate).getFullYear();
-    const isRecognized = (years % 5 === 0) && (years != 0);
-    const monthDiff = currDate.getMonth() - new Date(startDate).getMonth();
-    const months = years * 12 + monthDiff;
-    const isProbated = months < 6;
 
     useEffect(() => {
         if (isRecognized) {
@@ -62,12 +59,12 @@ export default function EmployeeCard(props) {
     }, [info.title])
 
     return (
-    <div className="card" {...rest}>
-        <div className="topleft" style={{backgroundImage: `url('https://robohash.org/${index}?set=set5')`}}></div>
+    <div className={styles.card} {...rest}>
+        <div className={styles.topleft} style={{backgroundImage: `url('https://robohash.org/${index}?set=set5')`}}></div>
         <p><b>{name}</b></p>
         {isEditing ?
         <input value={info.title} onChange={(e) => handleInfoChange("title", e.target.value)}/> :
-        <p className="job" style={{backgroundColor: color}}>{info.title} {icon}</p>
+        <p className={styles.job} style={{backgroundColor: color}}>{info.title} {icon}</p>
         }
         {isEditing ?
         <input value={info.salary} onChange={(e) => handleInfoChange("salary", e.target.value)}/> :
@@ -75,15 +72,15 @@ export default function EmployeeCard(props) {
         <p>{startDate} ({years} years)</p>
         {isEditing ?
         <input value={info.passion} onChange={(e) => handleInfoChange("passion", e.target.value)}/> :
-        <p className="passion">{info.passion}</p>}
+        <p className={styles.passion}>{info.passion}</p>}
         <Button onClick={onPromote}>{action}</Button>
         {isEditing ? 
         <Button role="secondary" onClick={toggleEdit}>Save</Button> : 
         <Button role="secondary" onClick={toggleEdit}>Edit</Button>}
-        <div className="mark">{mark}</div>
-        <div className="hide1">Schedule recognition meeting</div>
-        <div className="probation">{probation}</div>
-        <div className="hide2">Schedule probation review</div>
+        <div className={styles.mark}>{mark}</div>
+        <div className={styles.hide1}>Schedule recognition meeting</div>
+        <div className={styles.probation}>{probation}</div>
+        <div className={styles.hide2}>Schedule probation review</div>
     </div>
 )
 }

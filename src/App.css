@@ -40,3 +40,8 @@ body {
 #logOut:hover {
   background-color: #7cb47e;
 }
+
+nav {
+  width: max-content;
+  margin-inline: auto;
+}

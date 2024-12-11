@@ -1,30 +1,20 @@
 import './App.css'
-import EmployeeList from "./EmployeeList.jsx";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx"
+import EmployeeList from "./components/EmployeeList/EmployeeList.jsx";
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx"
 import {useState} from "react";
+
+import { RouterProvider } from 'react-router-dom';
+import {router} from "./routes/appRoutes.jsx";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <>
-    <div className="flex">
-      <header>
-        <Header />
-      </header>
-      <main>
-        {loggedIn ? (
-          <>
-          <EmployeeList />
-          <div className="logOutButton"><button id="logOut" onClick={() => setLoggedIn(false)}>Log out</button></div>
-          </>
-          ) : <div className="logInButton"><button id="logIn" onClick={() => setLoggedIn(true)}>Log in</button></div>}
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <RouterProvider router={router} future={{
+        v7_startTransition: true,
+      }}/>
     </>
   )
 }

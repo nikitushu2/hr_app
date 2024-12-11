@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+}
+
+a.active {
+    color: gray;
+}
