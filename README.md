@@ -9,3 +9,8 @@ Each card represents information about an employee. Depending on his/her duratio
 ## Tech used
 
 HTML, CSS, JavaScript, React, APIs
+
+## Login
+
+username: test
+password: test
