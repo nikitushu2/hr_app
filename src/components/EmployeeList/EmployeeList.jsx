@@ -18,10 +18,10 @@ export default function EmployeeList() {
     if (persons) {
         return (
             <>
-                <div className={styles.container}>
+                <div className={styles.container} style={{marginBottom: '15px'}}>
                     {persons.map((obj, index) => (
                         
-                        <EmployeeCard key={obj.id} name={obj.name} role={obj.role} salary={obj.salary} startDate={obj.startDate} passion={obj.passion} index={index}/>
+                        <EmployeeCard key={obj.id} data={{id: obj.id, name: obj.name, role: obj.role, salary: obj.salary, startDate: obj.startDate, passion: obj.passion, country: obj.country, index: index}}/>
                     ))}
                 </div>
             </>

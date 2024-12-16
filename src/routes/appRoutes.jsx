@@ -4,12 +4,13 @@ import Login from "../pages/Login.jsx";
 import List from "../pages/List.jsx";
 import Form from "../pages/Form/Form.jsx";
 import ErrorPage from "../pages/ErrorPage.jsx";
+import EmployeeCard from "../components/EmployeeCard/EmployeeCard.jsx";
 
 export const router = createBrowserRouter([
     {path: '/', element: <Root />, errorElement: <ErrorPage />, children: [
         {path: '/login', element: <Login />},
         {path: '/employees', element: <List />},
-        {path: '/new', element: <Form />}
+        {path: '/new', element: <Form />},
     ]}
 ], {
     future: {

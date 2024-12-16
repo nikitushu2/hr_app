@@ -4,18 +4,19 @@ import Button from "../Button.jsx";
 import {useEmployeeStatus} from "../../hooks/useEmployeeStatus.js";
 
 export default function EmployeeCard(props) {
-    const {name, role, salary, startDate, passion, index, ...rest} = props;
-    const [job, setJob] = useState(role);
+    const {data, ...rest} = props;
+    const [job, setJob] = useState(data.role);
     const [action, setAction] = useState("Promote");
     const [icon, setIcon] = useState("");
     const [mark, setMark] = useState("");
     const [probation, setProbation] = useState("");
     const [isEditing, setIsEditing] = useState(false);
     const [color, setColor] = useState("");
-    const {years, isRecognized, isProbated} = useEmployeeStatus(startDate);
+    const {years, isRecognized, isProbated} = useEmployeeStatus(data.startDate);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-    const [info, setInfo] = useState({title: role, salary: salary, passion: passion});
+    const [info, setInfo] = useState({title: data.role, salary: data.salary, passion: data.passion});
 
     const toggleEdit = () => setIsEditing(prev => !prev);
 
@@ -36,7 +37,7 @@ export default function EmployeeCard(props) {
 
     function onPromote() {
         if (job === "Team Lead") {
-            setJob(role);
+            setJob(data.role);
             setAction("Promote");
             setIcon("");
         } else {
@@ -59,9 +60,28 @@ export default function EmployeeCard(props) {
     }, [info.title])
 
     return (
+    <>
+    { isModalOpen && (
+        <div id='myModal' className={styles.modal}>
+
+        <div className={styles.modalContent}>
+        <span className={styles.close} onClick={() => setIsModalOpen(false)}>&times;</span>
+        <p>Name: {data.name}</p>
+        <p>ID: {data.id}</p>
+        <p>Title: {data.role}</p>
+        <p>Salary: {data.salary}</p>
+        <p>Start date: {data.startDate}</p>
+        <p>Passion: {data.passion}</p>
+        <p>Country: {data.country}</p>
+        </div>
+    
+        </div>
+    )}
+
     <div className={styles.card} {...rest}>
-        <div className={styles.topleft} style={{backgroundImage: `url('https://robohash.org/${index}?set=set5')`}}></div>
-        <p><b>{name}</b></p>
+        <div className={styles.topleft} style={{backgroundImage: `url('https://robohash.org/${data.id}?set=set5')`}}></div>
+        <div className={styles.triangle} style={{borderColor: `transparent ${color} transparent transparent`}}></div>
+        <p><b>{data.name}</b></p>
         {isEditing ?
         <input value={info.title} onChange={(e) => handleInfoChange("title", e.target.value)}/> :
         <p className={styles.job} style={{backgroundColor: color}}>{info.title} {icon}</p>
@@ -69,18 +89,22 @@ export default function EmployeeCard(props) {
         {isEditing ?
         <input value={info.salary} onChange={(e) => handleInfoChange("salary", e.target.value)}/> :
         <p>{info.salary}</p>}
-        <p>{startDate} ({years} years)</p>
+        <p>{data.startDate} ({years} years)</p>
         {isEditing ?
         <input value={info.passion} onChange={(e) => handleInfoChange("passion", e.target.value)}/> :
         <p className={styles.passion}>{info.passion}</p>}
+        <div className={styles.buttonContainer}>
         <Button onClick={onPromote}>{action}</Button>
         {isEditing ? 
         <Button role="secondary" onClick={toggleEdit}>Save</Button> : 
-        <Button role="secondary" onClick={toggleEdit}>Edit</Button>}
+        <Button role="secondary"  onClick={toggleEdit}>Edit</Button>}
+        <Button role="secondary" onClick={() => setIsModalOpen(true)}>Details</Button>
+        </div>
         <div className={styles.mark}>{mark}</div>
         <div className={styles.hide1}>Schedule recognition meeting</div>
         <div className={styles.probation}>{probation}</div>
         <div className={styles.hide2}>Schedule probation review</div>
     </div>
+    </>
 )
 }
