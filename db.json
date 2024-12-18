@@ -7,7 +7,8 @@
       "salary": "2700$",
       "startDate": "2024-09-08",
       "passion": "Coding",
-      "country": "Ethiopia"
+      "country": "Ethiopia",
+      "title": "Developer"
     },
     {
       "id": "2",
@@ -15,8 +16,9 @@
       "role": "Designer",
       "salary": "3200$",
       "startDate": "2018-05-10",
-      "passion": "Art",
-      "country": "Madagascar"
+      "passion": "Nature",
+      "country": "Madagascar",
+      "title": "Designer"
     },
     {
       "id": "3",
@@ -25,7 +27,8 @@
       "salary": "4000$",
       "startDate": "2017-11-22",
       "passion": "Organizing",
-      "country": "Russia"
+      "country": "Russia",
+      "title": "Scientist"
     },
     {
       "id": "4",
@@ -34,7 +37,8 @@
       "salary": "2900$",
       "startDate": "2024-03-15",
       "passion": "Gaming",
-      "country": "Finland"
+      "country": "Finland",
+      "title": "Developer"
     },
     {
       "id": "5",
@@ -43,7 +47,8 @@
       "salary": "2500$",
       "startDate": "2015-07-30",
       "passion": "Testing",
-      "country": "Sweden"
+      "country": "Sweden",
+      "title": "Engineer"
     },
     {
       "id": "6",
@@ -52,7 +57,8 @@
       "salary": "2300$",
       "startDate": "2020-01-05",
       "passion": "Helping",
-      "country": "Italy"
+      "country": "Italy",
+      "title": "Scientist"
     },
     {
       "id": "7",
@@ -61,7 +67,8 @@
       "salary": "3100$",
       "startDate": "2019-06-17",
       "passion": "Coding",
-      "country": "France"
+      "country": "France",
+      "title": "Developer"
     },
     {
       "id": "8",
@@ -70,7 +77,8 @@
       "salary": "4500$",
       "startDate": "2024-08-09",
       "passion": "Data Analysis",
-      "country": "Germany"
+      "country": "Germany",
+      "title": "Scientist"
     },
     {
       "id": "9",
@@ -79,7 +87,8 @@
       "salary": "3300$",
       "startDate": "2017-04-13",
       "passion": "User Experience",
-      "country": "France"
+      "country": "France",
+      "title": "Designer"
     },
     {
       "id": "10",
@@ -88,16 +97,8 @@
       "salary": "5000$",
       "startDate": "2016-12-01",
       "passion": "Leadership",
-      "country": "Finland"
-    },
-    {
-      "id": 11,
-      "name": "Kornei",
-      "role": "Cleaner",
-      "salary": "1400",
-      "startDate": "2024",
-      "passion": "Writing",
-      "country": "Ukraine"
+      "country": "Finland",
+      "title": "Engineer"
     }
   ]
 }

@@ -10,7 +10,8 @@ export default function Form() {
         role: "",
         salary: "",
         startDate: "",
-        passion: ""
+        passion: "",
+        country: ""
     })
     const {create, read} = useAxios('http://localhost:3001/');
 
@@ -18,7 +19,7 @@ export default function Form() {
         read('data')
             .then(response => {
                 const id = (Number.parseInt(response[response.length - 1].id) + 1);
-                const updatedData = {...data, id: id};
+                const updatedData = {...data, id: String(id)};
                 console.log(updatedData);
                 return create(`data`, updatedData);
             })
@@ -44,6 +45,9 @@ export default function Form() {
 
             <label htmlFor="passion">Passion: </label>
             <input className={styles.input} name="passion" id="passion" value={data.passion} onChange={(e) => setData({...data, passion: e.target.value})}/>
+
+            <label htmlFor="country">Country: </label>
+            <input className={styles.input} name="country" id="country" value={data.country} onChange={(e) => setData({...data, country: e.target.value})}/>
 
             <button type="submit" onClick={handleClick}>Add</button>
         </form>

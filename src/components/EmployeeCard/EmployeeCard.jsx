@@ -2,6 +2,7 @@ import styles from "./EmployeeCard.module.css";
 import {useState, useEffect} from "react";
 import Button from "../Button.jsx";
 import {useEmployeeStatus} from "../../hooks/useEmployeeStatus.js";
+import useAxios from "../../services/useAxios.js";
 
 export default function EmployeeCard(props) {
     const {data, ...rest} = props;
@@ -14,13 +15,20 @@ export default function EmployeeCard(props) {
     const [color, setColor] = useState("");
     const {years, isRecognized, isProbated} = useEmployeeStatus(data.startDate);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const {update} = useAxios('http://localhost:3001/')
 
 
     const [info, setInfo] = useState({title: data.role, salary: data.salary, passion: data.passion});
 
     const toggleEdit = () => setIsEditing(prev => !prev);
 
-    const handleInfoChange = (key, value) => setInfo({...info, [key]: value})
+    const handleInfoChange = (key, value) => {
+        setInfo({...info, [key]: value})
+    }
+
+    useEffect(() => {
+        update(`data/${data.id}`, info)
+    }, [info])
 
 
     useEffect(() => {
