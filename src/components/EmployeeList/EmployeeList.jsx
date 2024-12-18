@@ -6,7 +6,7 @@ import useAxios from "../../services/useAxios.js";
 
 export default function EmployeeList() {
     const [persons, setPersons] = useState([]);
-    const {read} = useAxios('https://backend-production-9dda.up.railway.app')
+    const {read} = useAxios('https://backend-production-9dda.up.railway.app/')
     
     useEffect(() => {
         read("data")
