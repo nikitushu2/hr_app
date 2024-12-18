@@ -13,7 +13,7 @@ export default function Form() {
         passion: "",
         country: ""
     })
-    const {create, read} = useAxios('http://localhost:3001/');
+    const {create, read} = useAxios('https://backend-production-9dda.up.railway.app');
 
     function handleClick() {
         read('data')

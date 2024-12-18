@@ -15,7 +15,7 @@ export default function EmployeeCard(props) {
     const [color, setColor] = useState("");
     const {years, isRecognized, isProbated} = useEmployeeStatus(data.startDate);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const {update} = useAxios('http://localhost:3001/')
+    const {update} = useAxios('https://backend-production-9dda.up.railway.app')
 
 
     const [info, setInfo] = useState({title: data.role, salary: data.salary, passion: data.passion});
